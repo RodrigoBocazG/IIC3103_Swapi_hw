@@ -1,0 +1,27 @@
+<h1>Movie#index</h1>
+<p>Find me in app/views/movie/index.html.erb</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Release date</th>
+      <th>Director</th>
+      <th>Producer(s)</th>
+      <th>Episode number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @movies.each do |movie|%>
+      <tr>
+        <td><%= movie[:title] %></td>
+        <td><%= movie[:release_date] %></td>
+        <td><%= movie[:director] %></td>
+        <td><%= movie[:producer] %></td>
+        <td><%= movie[:episode_id] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= @response %>
