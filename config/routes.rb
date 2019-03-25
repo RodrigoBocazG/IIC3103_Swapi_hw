@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   get '/starship/:starship_id', to: 'starship#show', as: :starship_show
   get '/movie/:episode_id', to: 'movie#show', as: :movie_show
   get '/movies', to: 'movie#index'
+  root to: 'movie#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
