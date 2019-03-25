@@ -1,0 +1,8 @@
+.characters_table {
+  display: flex;
+  flex-direction: row;
+}
+
+.characters_table .characters_table_container {
+  min-width: 200px;
+}

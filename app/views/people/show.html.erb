@@ -1,0 +1,35 @@
+<h1>
+  <%= "#{@character[:name]}" %>
+</h1>
+<ul id='planet_info'>
+  <li><%= "Height: #{@character[:height]}" %></li>
+  <li><%= "Mass: #{@character[:mass]}" %></li>
+  <li><%= "Hair color: #{@character[:hair_color]}" %></li>
+  <li><%= "Skin color: #{@character[:skin_color]}" %></li>
+  <li><%= "Eye color: #{@character[:eye_color]}" %></li>
+  <li><%= "Birth year: #{@character[:birth_year]}" %></li>
+  <li><%= "Gender: #{@character[:gender]}" %></li>
+  <li>Homeworld: <%= link_to("#{@homeworld[1][:name]}", planet_show_path(@homeworld[0])) %></li>
+</ul>
+<div class="characters_table">
+  <div class="characters_table_container">
+    <h3>Films</h3>
+    <ul>
+      <% @films.each do |film|%>
+        <li>
+          <%= link_to("#{film[1][:title]}", movie_show_path(film[0])) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="characters_table_container">
+    <h3>Starships</h3>
+    <ul>
+      <% @starships.each do |starship|%>
+        <li>
+          <%= link_to("#{starship[1][:name]}", starship_show_path(starship[0])) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

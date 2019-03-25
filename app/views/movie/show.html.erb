@@ -1,2 +1,41 @@
-<h1>Movie#show</h1>
-<p>Find me in app/views/movie/show.html.erb</p>
+<h1>
+  <%= "Star Wars: Episode #{@movie[:episode_id]} - #{@movie[:title]}" %>
+</h1>
+<div id='movie_creators'>
+  <p><%= "Director: #{@movie[:director]}" %></p>
+  <p><%= "Producer: #{@movie[:producer]}" %></p>
+  <p><%= "Release date: #{@movie[:release_date]}" %></p>
+</div>
+<p><%= "#{@movie[:opening_crawl]}" %></p>
+<div class="movie_table">
+  <div class="movie_table_container">
+    <h3>Planets</h3>
+    <ul>
+      <% @planets.each do |planet|%>
+        <li>
+          <%= link_to("#{planet[1][:name]}", planet_show_path(planet[0])) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="movie_table_container">
+    <h3>Starships</h3>
+    <ul>
+      <% @starships.each do |starship|%>
+        <li>
+          <%= link_to("#{starship[1][:name]}", starship_show_path(starship[0])) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="movie_table_container">
+    <h3>Characters</h3>
+    <ul>
+      <% @characters.each do |character|%>
+        <li>
+          <%= link_to("#{character[1][:name]}", people_show_path(character[0])) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

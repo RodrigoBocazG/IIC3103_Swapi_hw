@@ -1,0 +1,35 @@
+<h1>
+  <%= "#{@planet[:name]}" %>
+</h1>
+<ul id='planet_info'>
+  <li><%= "Rotation period: #{@planet[:rotation_period]}" %></li>
+  <li><%= "Orbital period: #{@planet[:orbital_period]}" %></li>
+  <li><%= "Diameter: #{@planet[:diameter]}" %></li>
+  <li><%= "Climate: #{@planet[:climate]}" %></li>
+  <li><%= "Gravity: #{@planet[:gravity]}" %></li>
+  <li><%= "Terrain: #{@planet[:terrain]}" %></li>
+  <li><%= "Surface water: #{@planet[:surface_water]}" %></li>
+  <li><%= "Population: #{@planet[:population]}" %></li>
+</ul>
+<div class="planet_table">
+  <div class="planet_table_container">
+    <h3>Residents</h3>
+    <ul>
+      <% @residents.each do |resident|%>
+        <li>
+          <%= link_to("#{resident[1][:name]}", people_show_path(resident[0])) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="planet_table_container">
+    <h3>Films</h3>
+    <ul>
+      <% @films.each do |film|%>
+        <li>
+          <%= link_to("#{film[1][:title]}", movie_show_path(film[0])) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

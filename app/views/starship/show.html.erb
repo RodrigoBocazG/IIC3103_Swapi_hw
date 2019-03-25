@@ -1,0 +1,39 @@
+<h1>
+  <%= "#{@starship[:name]}" %>
+</h1>
+<ul id='starship_info'>
+  <li><%= "Model: #{@starship[:model]}" %></li>
+  <li><%= "Manufacturer: #{@starship[:manufacturer]}" %></li>
+  <li><%= "Cost in credits: #{@starship[:cost_in_credits]}" %></li>
+  <li><%= "Length: #{@starship[:length]}" %></li>
+  <li><%= "Max atmosphering speed: #{@starship[:max_atmosphering_speed]}" %></li>
+  <li><%= "Crew: #{@starship[:crew]}" %></li>
+  <li><%= "Passengers: #{@starship[:passengers]}" %></li>
+  <li><%= "Cargo capacity: #{@starship[:cargo_capacity]}" %></li>
+  <li><%= "Consumables: #{@starship[:consumables]}" %></li>
+  <li><%= "Hyperdrive rating: #{@starship[:hyperdrive_rating]}" %></li>
+  <li><%= "MGLT: #{@starship[:MGLT]}" %></li>
+  <li><%= "Starship class: #{@starship[:starship_class]}" %></li>
+</ul>
+<div class="starship_table">
+  <div class="starship_table_container">
+    <h3>Films</h3>
+    <ul>
+      <% @films.each do |film|%>
+        <li>
+          <%= link_to("#{film[1][:title]}", movie_show_path(film[0])) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="starship_table_container">
+    <h3>Pilots</h3>
+    <ul>
+      <% @pilots.each do |pilot|%>
+        <li>
+          <%= link_to("#{pilot[1][:name]}", people_show_path(pilot[0])) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
